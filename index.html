@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html ng-app="weatherChat">
+<html>
 <head>
-  <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Weather Chat</title>
 </head>
 
-<body>
+<body ng-app="weatherChat">
 <!-- navigation bar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -23,28 +23,30 @@
    <br>
   <div>
   <h2> Search weather for your city </h2>
-  <input type="text" ng-model="city-search"/>
+  <input type="text" ng-model="searchInput"/>
   <button class="btn btn-primary" ng-click="">Search</button> 
   <button class="btn btn-primary" ng-click="">Clear Search</button>
   </div>
   <br>
   
-  <div class="row" ng-model="city-weather">
-  <div class="new-weather col-md-4">
-      <h2 class="text-center entry"> {{City}}<i class="fa fa-trash-o" aria-hidden="true"></i></h2>
-      <h5> <strong>{{Temp}}°C</strong> at {{Time}}</h5>
+
+  <div class="new-weather" ng-repeat="city in cityList">
+      <h2 class="text-center entry"> {{city.City}} <i class="fa fa-trash-o" aria-hidden="true"></i></h2>
+      <h5 class="text-center"> <strong>{{city.Temp}}°C</strong> at {{city.Time}}</h5>
       <div class="comments-container">
         <h3>Add your comment:</h3>
         <div class="comments-list">
         <p> list of comments will go here </p>
         </div>
       <input type="text" class="comment-name">
-      <button class="btn btn-primary add-comment" data-name="{{City}}">Post Comment</button> 
+      <button class="btn btn-primary add-comment">Post Comment</button> 
       </div>
-    </div>
   </div>
-
 </div>
+
+<!-- script links-->
+
+<script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="node_modules/angular/angular.js"></script>
 <script src="app.js"></script>
 <script src="service.js"></script>

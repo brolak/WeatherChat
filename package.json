@@ -11,7 +11,6 @@
   "dependencies": {
     "angular": "^1.6.2",
     "bootstrap": "^3.3.6",
-    "express": "^4.14.1",
     "font-awesome": "^4.5.0"
   },
   "devDependencies": {},
