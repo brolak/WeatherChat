@@ -1,0 +1,18 @@
+.new-weather {
+	border: solid black 2px;
+}
+
+.fa-trash-o {
+	display: inline-block;
+	font-size: 20 px;
+	text-align: right;
+	color: red;
+}
+
+h3 {
+	display: inline-block;
+}
+
+.new-weather{
+	padding: 1%;
+}

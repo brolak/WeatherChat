@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="weatherChat">
+<head>
+  <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Weather Chat</title>
+</head>
+
+<body>
+<!-- navigation bar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="#">Weather Chat</a>
+      </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid" ng-controller="mainCtrl">
+   <br>
+   <br>
+  <div>
+  <h2> Search weather for your city </h2>
+  <input type="text" ng-model="city-search"/>
+  <button class="btn btn-primary" ng-click="">Search</button> 
+  <button class="btn btn-primary" ng-click="">Clear Search</button>
+  </div>
+  <br>
+  
+  <div class="row" ng-model="city-weather">
+  <div class="new-weather col-md-4">
+      <h2 class="text-center entry"> {{City}}<i class="fa fa-trash-o" aria-hidden="true"></i></h2>
+      <h5> <strong>{{Temp}}°C</strong> at {{Time}}</h5>
+      <div class="comments-container">
+        <h3>Add your comment:</h3>
+        <div class="comments-list">
+        <p> list of comments will go here </p>
+        </div>
+      <input type="text" class="comment-name">
+      <button class="btn btn-primary add-comment" data-name="{{City}}">Post Comment</button> 
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script src="app.js"></script>
+<script src="service.js"></script>
+<script src="mainCtrl.js"></script>
+
+</body>
+</html>
